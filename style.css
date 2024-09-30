@@ -39,7 +39,7 @@ body {
     background-color: white;
 }
 
-.row {
+.row-header {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -80,8 +80,10 @@ body {
 }
 
 .video-player {
-    width: 100%;  /* Larghezza al 100% del contenitore */
-    height: 300px; /* Altezza fissa */
+    width: 100%;
+    /* Larghezza al 100% del contenitore */
+    height: 300px;
+    /* Altezza fissa */
 }
 
 .food-brief-container {
@@ -90,11 +92,9 @@ body {
 
 .food-brief-list {
     padding-top: 20px;
-}
-
-.food-brief-list,
-li {
-    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px
 }
 
 .social-buttons {
@@ -132,7 +132,8 @@ a {
     color: white;
 }
 
-.row-footer, .giallo-booleano{
+.row-footer,
+.giallo-booleano {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -140,11 +141,10 @@ a {
 
 .info-flex {
     display: flex;
-    gap: 20px;  
+    gap: 20px;
 }
 
 .img-title {
-    align-self: flex-start;
     margin-bottom: 12px;
 }
 
@@ -161,4 +161,128 @@ a {
     font-size: 16px;
     margin-top: 12px;
     margin-bottom: 16px;
+}
+
+.banner-img {
+    display: none;
+    width: 100%;
+}
+
+.button-text {
+    display: none;
+}
+
+/* tablet 768 */
+
+
+@media (min-width: 768px) {
+
+    .video-player {
+        height: 378px;
+    }
+
+    .food-brief-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0;
+        padding-top: 10px;
+    }
+
+    .col {
+        width: 33%;
+        margin-top: 20px;
+    }
+
+    .social-buttons {
+        justify-content: space-between;
+    }
+
+    .social-btn {
+        width: 18%;
+        box-shadow: 0 3px 7px 1px grey;
+    }
+
+    .img-title {
+        margin-bottom: 24px;
+        margin-top: 12px;
+    }
+
+    .img-title::after {
+        margin-top: 8px;
+    }
+
+    .row-info {
+        display: block;
+    }
+
+    .tiramisu {
+        float: left;
+        width: 40%;
+        margin-right: 8px;
+    }
+
+    .banner-img {
+        display: block;
+    }
+
+    .food-container {
+        margin-bottom: 32px;
+    }
+
+    .main-container {
+        padding-left: 48px;
+        padding-right: 48px;
+    }
+}
+
+
+
+
+/* desktop 992 */
+@media (min-width: 992px) {
+    .row-header {
+        display: block;
+        padding-left: 20px;
+    }
+
+    .main-container {
+        max-width: 1100px;
+        margin: auto;
+    }
+
+    .food-brief {
+        display: flex;
+    }
+
+    .food-brief-container,
+    .video-player {
+        width: 50%;
+    }
+
+    .food-brief-list {
+        flex-direction: column;
+    }
+
+    .col {
+        width: 100%;
+    }
+
+    .button-text {
+        display: inline;
+    }
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.giallo-booleano {
+    display: block;
+}
+.copyright {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
 }
